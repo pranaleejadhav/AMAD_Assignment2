@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // Register to receive notification
+        NotificationCenter.default.addObserver(self, selector: #selector(showHomeScreen(_:)), name: Notification.Name("com.mad.showhomescreen"), object: nil)
+        
+        UIApplication.shared.statusBarStyle = .lightContent
         return true
     }
 
@@ -39,6 +43,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    @objc func showHomeScreen(_ notification:Notification){
+        
+        //change status bar appearance
+        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+        if statusBar.responds(to: #selector(setter: UIView.backgroundColor)) {
+            statusBar.backgroundColor = UIColor.init(red:0.14, green:0.32, blue:0.85, alpha:1)
+        }
+        
+        let userid = UserDefaults.standard.string(forKey: "token")
+        //check user is logged in or not
+        if userid != nil {
+            //user is logged in, redirect to home page
+            let bundle = Bundle.main
+            let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+            
+            let viewController: HomeScreenViewController = storyboard.instantiateViewController(withIdentifier: "HomeScreenViewController") as! HomeScreenViewController
+            let navigationController = UINavigationController(rootViewController: viewController)
+            
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = navigationController
+            self.window?.makeKeyAndVisible()
+            
+            
+        } else {
+            //user is not logged in, redirect to login page
+            
+            let bundle = Bundle.main
+            let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+            
+            let loginViewController: LoginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = loginViewController
+            self.window?.makeKeyAndVisible()
+        }
+        
     }
 
 

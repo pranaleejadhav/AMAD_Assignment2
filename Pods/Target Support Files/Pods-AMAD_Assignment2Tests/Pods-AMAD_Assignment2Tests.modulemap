@@ -1,0 +1,6 @@
+framework module Pods_AMAD_Assignment2Tests {
+  umbrella header "Pods-AMAD_Assignment2Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
