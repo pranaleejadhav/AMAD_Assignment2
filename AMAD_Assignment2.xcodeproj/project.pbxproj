@@ -17,6 +17,10 @@
 		9C21C354214705FE0043792B /* AMAD_Assignment2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21C353214705FE0043792B /* AMAD_Assignment2Tests.swift */; };
 		9C21C35F214705FE0043792B /* AMAD_Assignment2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21C35E214705FE0043792B /* AMAD_Assignment2UITests.swift */; };
 		9C2B926B21475FA5008CAE47 /* QuestionList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C2B926A21475FA5008CAE47 /* QuestionList.plist */; };
+		9C2B926E21476E07008CAE47 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2B926D21476E07008CAE47 /* SurveyViewController.swift */; };
+		9C2B927021476E22008CAE47 /* ShowResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2B926F21476E22008CAE47 /* ShowResultViewController.swift */; };
+		9C2B9275214829C6008CAE47 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C2B9273214829C6008CAE47 /* check.png */; };
+		9C2B9276214829C6008CAE47 /* uncheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C2B9274214829C6008CAE47 /* uncheck.png */; };
 		9CEDD99921470726006AD6C5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEDD98E21470725006AD6C5 /* Reachability.swift */; };
 		9CEDD99A21470726006AD6C5 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEDD99021470725006AD6C5 /* HomeScreenViewController.swift */; };
 		9CEDD99B21470726006AD6C5 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEDD99121470725006AD6C5 /* ServerManager.swift */; };
@@ -60,6 +64,10 @@
 		9C21C35E214705FE0043792B /* AMAD_Assignment2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMAD_Assignment2UITests.swift; sourceTree = "<group>"; };
 		9C21C360214705FE0043792B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C2B926A21475FA5008CAE47 /* QuestionList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = QuestionList.plist; sourceTree = "<group>"; };
+		9C2B926D21476E07008CAE47 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
+		9C2B926F21476E22008CAE47 /* ShowResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowResultViewController.swift; sourceTree = "<group>"; };
+		9C2B9273214829C6008CAE47 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		9C2B9274214829C6008CAE47 /* uncheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uncheck.png; sourceTree = "<group>"; };
 		9CEDD98E21470725006AD6C5 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		9CEDD99021470725006AD6C5 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		9CEDD99121470725006AD6C5 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
@@ -151,6 +159,8 @@
 		9C21C33D214705FC0043792B /* AMAD_Assignment2 */ = {
 			isa = PBXGroup;
 			children = (
+				9C2B9272214829C6008CAE47 /* Resources */,
+				9C2B926C21476DDE008CAE47 /* SurveyViewController */,
 				9CEDD99221470725006AD6C5 /* CustomLaunchScreen */,
 				9CEDD98F21470725006AD6C5 /* HomeScreen */,
 				9CEDD99421470725006AD6C5 /* LoginViewController */,
@@ -183,6 +193,24 @@
 				9C21C360214705FE0043792B /* Info.plist */,
 			);
 			path = AMAD_Assignment2UITests;
+			sourceTree = "<group>";
+		};
+		9C2B926C21476DDE008CAE47 /* SurveyViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9C2B926D21476E07008CAE47 /* SurveyViewController.swift */,
+				9C2B926F21476E22008CAE47 /* ShowResultViewController.swift */,
+			);
+			name = SurveyViewController;
+			sourceTree = "<group>";
+		};
+		9C2B9272214829C6008CAE47 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C2B9273214829C6008CAE47 /* check.png */,
+				9C2B9274214829C6008CAE47 /* uncheck.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		9CEDD98F21470725006AD6C5 /* HomeScreen */ = {
@@ -327,9 +355,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C2B926B21475FA5008CAE47 /* QuestionList.plist in Resources */,
+				9C2B9275214829C6008CAE47 /* check.png in Resources */,
 				9C21C349214705FE0043792B /* LaunchScreen.storyboard in Resources */,
 				9C21C346214705FE0043792B /* Assets.xcassets in Resources */,
 				9C21C344214705FC0043792B /* Main.storyboard in Resources */,
+				9C2B9276214829C6008CAE47 /* uncheck.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +470,8 @@
 				9C21C33F214705FC0043792B /* AppDelegate.swift in Sources */,
 				9CEDD99A21470726006AD6C5 /* HomeScreenViewController.swift in Sources */,
 				9CEDD99F21470726006AD6C5 /* ViewProfileController.swift in Sources */,
+				9C2B926E21476E07008CAE47 /* SurveyViewController.swift in Sources */,
+				9C2B927021476E22008CAE47 /* ShowResultViewController.swift in Sources */,
 				9CEDD99C21470726006AD6C5 /* CustomlaunchscreenController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

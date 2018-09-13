@@ -12,7 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    static let kCustomURLScheme = "assignment2://"
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -57,6 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //check user is logged in or not
         if userid != nil {
             //user is logged in, redirect to home page
+            
             let bundle = Bundle.main
             let storyboard = UIStoryboard(name: "Main", bundle: bundle)
             
@@ -70,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         } else {
             //user is not logged in, redirect to login page
-            
+            UserDefaults.standard.set(-1, forKey: "survey")
             let bundle = Bundle.main
             let storyboard = UIStoryboard(name: "Main", bundle: bundle)
             
@@ -82,6 +84,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
 
-
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+       
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true), let queryItems = components.queryItems else {
+            return false
+        }
+        
+        var parameters = [String: String]()
+        for item in queryItems {
+            parameters[item.name] = item.value
+        }
+        
+        //let urlComponents = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)
+        /*let urlComponents = NSURLComponents(url: url, resolvingAgainstBaseURL: false)
+        let items = (urlComponents?.queryItems)! //as [NSURLQueryItem] // {name = backgroundcolor, value = red}
+        print(items)
+        if (url.scheme == "assignment2") {
+           
+            if let _ = items.first, let propertyName = items.first?.name, let propertyValue = items.first?.value {
+               
+                if (propertyValue == "red") {
+                   // color = UIColor.redColor()
+                }
+            }
+        }
+        
+        
+        let urlScheme = url.scheme //[URL_scheme]
+        let host = url.query //red
+        print(host)*/
+        return true
+    }
+    
+   
 }
 

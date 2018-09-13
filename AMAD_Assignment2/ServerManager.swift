@@ -60,20 +60,58 @@ func post_registerrequest(parameters: Parameters, handler:@escaping (Int) -> Voi
     }
 }
 
+//to submit survey responses
+func post_submitsurvey(parameters: Parameters, handler:@escaping (Int) -> Void) -> Void {
+    if Connectivity.isConnectedToInternet {
+        let server_url = "http://ec2-18-221-45-243.us-east-2.compute.amazonaws.com:7000/userresponse"
+        let headers = [
+            "Authorization": "Bearer "+UserDefaults.standard.string(forKey: "token")!,
+            "Content-Type": "application/json"
+        ]
+        
+        print(parameters)
+        Alamofire.request(server_url, method: .post, parameters: parameters,encoding:
+            JSONEncoding.default, headers: headers).responseJSON { (response:DataResponse<Any>) in
+                print(response)
+                switch response.result {
+                case .success(let value):
+                    if let dict = value as? Dictionary<String, Any>{
+                        //print(dict["token"]!)
+                        if let val = dict["error"] as? Int{
+                            if(val==1){
+                                handler(3)
+                            } else {
+                                handler(2)
+                            }
+                        }
+                        
+                    }
+                    break
+                    
+                case .failure(let error):
+                    print(error)
+                    handler(1)
+                }
+        }
+        
+    }
+}
+
 //to call login api
 func post_loginrequest(parameters: Parameters, handler:@escaping (Int) -> Void) -> Void {
    if Connectivity.isConnectedToInternet {
       
-       let server_url = "http://laravel-jwt.us-east-2.elasticbeanstalk.com/api/login"
+       let server_url = "http://ec2-18-221-45-243.us-east-2.compute.amazonaws.com:7000/login"
         
          Alamofire.request(server_url, method: .post, parameters: parameters,encoding:
          JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
-        
+        print("RESPONSE")
+            print(response)
          switch response.result {
          case .success(let value):
             print("response")
-            if let dict = value as? Dictionary<String, String>{
-                //print(dict["token"]!)
+            if let dict = value as? Dictionary<String, Any>{
+                print(dict["token"]!)
                 if let val = dict["token"]{
                     print(val)
                     UserDefaults.standard.set(val, forKey: "token")
@@ -105,20 +143,24 @@ func post_loginrequest(parameters: Parameters, handler:@escaping (Int) -> Void) 
 //to call update profile api
 func post_updateprofilerequest(parameters: Parameters, handler:@escaping (Int) -> Void) -> Void {
     if Connectivity.isConnectedToInternet {
-        let server_url = "http://laravel-jwt.us-east-2.elasticbeanstalk.com/api/updatedata"
-        
-        Alamofire.request(server_url, method: .post, parameters: parameters,encoding:
-            JSONEncoding.default, headers: nil).responseJSON { (response:DataResponse<Any>) in
+        let server_url = "http://ec2-18-221-45-243.us-east-2.compute.amazonaws.com:7000/users"
+        let headers = [
+            "Authorization": "Bearer "+UserDefaults.standard.string(forKey: "token")!,
+            "Content-Type": "application/json"
+        ]
+        print(parameters)
+        Alamofire.request(server_url, method: .put, parameters: parameters,encoding:
+            JSONEncoding.default, headers: headers).responseJSON { (response:DataResponse<Any>) in
                 print(response)
                 switch response.result {
                 case .success(let value):
                     if let dict = value as? Dictionary<String, Any>{
                         //print(dict["token"]!)
-                        if let val = dict["success"] as? Bool{
-                            if(val){
-                                handler(2)
-                            } else {
+                        if let val = dict["error"] as? Int{
+                            if(val==1){
                                 handler(3)
+                            } else {
+                                handler(2)
                             }
                         }
                         
@@ -137,20 +179,25 @@ func post_updateprofilerequest(parameters: Parameters, handler:@escaping (Int) -
 
 //to call get profiledata api
 func post_showprofilerequest(parameters: Parameters, handler:@escaping (Dictionary<String, Any>) -> Void) -> Void {
+    let headers = [
+        "Authorization": "Bearer "+UserDefaults.standard.string(forKey: "token")!,
+        "Content-Type": "application/json"
+    ]
     if Connectivity.isConnectedToInternet {
-        let server_url = "http://laravel-jwt.us-east-2.elasticbeanstalk.com/api/user?token="+UserDefaults.standard.string(forKey: "token")!
-        
-        Alamofire.request(server_url).responseJSON { (response:DataResponse<Any>) in
+        let server_url = "http://ec2-18-221-45-243.us-east-2.compute.amazonaws.com:7000/users"
+       
+        Alamofire.request(server_url, method: .get, parameters: nil,encoding:
+            JSONEncoding.default, headers: headers).responseJSON { (response:DataResponse<Any>) in
                 print(response)
                 switch response.result {
                 case .success(let value):
                     if let val = value as? Dictionary<String, Any> {
                        
-                    if let dict = val["user"] as? Dictionary<String, Any>{
-                        handler(dict)
-                    } else {
+                    //if let dict = val["user"] as? Dictionary<String, Any>{
+                        handler(val)
+                    /*} else {
                         handler(["code":1])
-                    }
+                    }(*/
                     }else {
                         handler(["code":1])
                     }
@@ -201,6 +248,8 @@ func post_logoutrequest(parameters: Parameters, handler:@escaping (Int) -> Void)
         }
         
     }
+    
+    
 }
 
 

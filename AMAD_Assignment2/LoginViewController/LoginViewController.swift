@@ -66,8 +66,7 @@ class LoginViewController: UIViewController{
             }
         else{
             //pass parameters to server
-            let str:String=uname+"@gmail.com"
-            let params = ["name": uname, "password": pwd, "email":str]
+            let params = ["username": uname, "password": pwd]
             //show loader
             SVProgressHUD.show()
             post_loginrequest(parameters: params, handler: {(data) in

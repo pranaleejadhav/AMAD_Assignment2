@@ -2,177 +2,124 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>0</key>
-	<dict>
-		<key>answers</key>
+	<key>Objects</key>
+	<array>
 		<dict>
-			<key>Never</key>
-			<string></string>
-			<key>Montly or less</key>
-			<string></string>
-			<key>2-4 times a month</key>
-			<string></string>
-			<key>2-3 times a week</key>
-			<string></string>
-			<key>4 or more times a week</key>
-			<string></string>
+			<key>answers</key>
+			<array>
+				<string>Never</string>
+				<string>Montly or less</string>
+				<string>2-4 times a month</string>
+				<string>2-3 times a week</string>
+				<string>4 or more times a week</string>
+			</array>
+			<key>question</key>
+			<string>How often do you have a drink containing alcohol ?</string>
 		</dict>
-		<key>question</key>
-		<string>How often do you have a drink containing alcohol ?</string>
-	</dict>
-	<key>1</key>
-	<dict>
-		<key>answers</key>
 		<dict>
-			<key>1 or 2</key>
-			<string></string>
-			<key>3 or 4</key>
-			<string></string>
-			<key>5 or 6</key>
-			<string></string>
-			<key>7 to 9</key>
-			<string></string>
-			<key>10 or more</key>
-			<string></string>
+			<key>answers</key>
+			<array>
+				<string>1 or 2</string>
+				<string>3 or 4</string>
+				<string>5 or 6</string>
+				<string>7 to 9</string>
+				<string>10 or more</string>
+			</array>
+			<key>question</key>
+			<string>How many drinks containing alcohol do you have on a typical day when you are drinking ?</string>
 		</dict>
-		<key>question</key>
-		<string>How many drinks containing alcohol do you have on a typical day when you are drinking ?</string>
-	</dict>
-	<key>2</key>
-	<dict>
-		<key>answers</key>
 		<dict>
-			<key>Never</key>
-			<string></string>
-			<key>Less than montly</key>
-			<string></string>
-			<key>Monthly</key>
-			<string></string>
-			<key>Weekly</key>
-			<string></string>
-			<key>Daily or almost daily</key>
-			<string></string>
+			<key>answers</key>
+			<array>
+				<string>Never</string>
+				<string>Less than montly</string>
+				<string>Monthly</string>
+				<string>Weekly</string>
+				<string>Daily or almost daily</string>
+			</array>
+			<key>question</key>
+			<string>How often do you have six or more drinks on one occasion?</string>
 		</dict>
-		<key>question</key>
-		<string>How often do you have six or more drinks on one occasion?</string>
-	</dict>
-	<key>3</key>
-	<dict>
-		<key>answers</key>
 		<dict>
-			<key>Never</key>
-			<string></string>
-			<key>Less than montly</key>
-			<string></string>
-			<key>Monthly</key>
-			<string></string>
-			<key>Weekly</key>
-			<string></string>
-			<key>Daily or almost daily</key>
-			<string></string>
+			<key>answers</key>
+			<array>
+				<string>Never</string>
+				<string>Less than montly</string>
+				<string>Monthly</string>
+				<string>Weekly</string>
+				<string>Daily or almost daily</string>
+			</array>
+			<key>question</key>
+			<string>How often during the last year have you found that you were not able to stop drinking once you had started?</string>
 		</dict>
-		<key>question</key>
-		<string>How often during the last year have you found that you were not able to stop drinking once you had started?</string>
-	</dict>
-	<key>4</key>
-	<dict>
-		<key>answers</key>
 		<dict>
-			<key>Never</key>
-			<string></string>
-			<key>Less than montly</key>
-			<string></string>
-			<key>Monthly</key>
-			<string></string>
-			<key>Weekly</key>
-			<string></string>
-			<key>Daily or almost daily</key>
-			<string></string>
+			<key>answers</key>
+			<array>
+				<string>Never</string>
+				<string>Less than montly</string>
+				<string>Monthly</string>
+				<string>Weekly</string>
+				<string>Daily or almost daily</string>
+			</array>
+			<key>question</key>
+			<string>How often during the last year have you failed to do what was normally expected from you because of drinking?</string>
 		</dict>
-		<key>question</key>
-		<string>How often during the last year have you failed to do what was normally expected from you because of drinking?</string>
-	</dict>
-	<key>5</key>
-	<dict>
-		<key>answers</key>
 		<dict>
-			<key>Never</key>
-			<string></string>
-			<key>Montly or less</key>
-			<string></string>
-			<key>2-4 times a month</key>
-			<string></string>
-			<key>2-3 times a week</key>
-			<string></string>
-			<key>4 or more times a week</key>
-			<string></string>
+			<key>answers</key>
+			<array>
+				<string>Never</string>
+				<string>Montly or less</string>
+				<string>2-4 times a month</string>
+				<string>2-3 times a week</string>
+				<string>4 or more times a week</string>
+			</array>
+			<key>question</key>
+			<string>How often during the last year have you needed a first drink in the morning to get yourself going after a heavy drinking session?</string>
 		</dict>
-		<key>question</key>
-		<string>How often during the last year have you needed a first drink in the morning to get yourself going after a heavy drinking session?</string>
-	</dict>
-	<key>6</key>
-	<dict>
-		<key>answers</key>
 		<dict>
-			<key>Never</key>
-			<string></string>
-			<key>Montly or less</key>
-			<string></string>
-			<key>2-4 times a month</key>
-			<string></string>
-			<key>2-3 times a week</key>
-			<string></string>
-			<key>4 or more times a week</key>
-			<string></string>
+			<key>answers</key>
+			<array>
+				<string>Never</string>
+				<string>Montly or less</string>
+				<string>2-4 times a month</string>
+				<string>2-3 times a week</string>
+				<string>4 or more times a week</string>
+			</array>
+			<key>question</key>
+			<string>How often during the last year have you had a feeling of guilt or remorse after drinking?</string>
 		</dict>
-		<key>question</key>
-		<string>How often during the last year have you had a feeling of guilt or remorse after drinking?</string>
-	</dict>
-	<key>7</key>
-	<dict>
-		<key>answers</key>
 		<dict>
-			<key>Never</key>
-			<string></string>
-			<key>Montly or less</key>
-			<string></string>
-			<key>2-4 times a month</key>
-			<string></string>
-			<key>2-3 times a week</key>
-			<string></string>
-			<key>4 or more times a week</key>
-			<string></string>
+			<key>answers</key>
+			<array>
+				<string>Never</string>
+				<string>Montly or less</string>
+				<string>2-4 times a month</string>
+				<string>2-3 times a week</string>
+				<string>4 or more times a week</string>
+			</array>
+			<key>question</key>
+			<string>How often during the last year have you been unable to remember what happened the night before because you had been drinking?</string>
 		</dict>
-		<key>question</key>
-		<string>How often during the last year have you been unable to remember what happened the night before because you had been drinking?</string>
-	</dict>
-	<key>8</key>
-	<dict>
-		<key>answers</key>
 		<dict>
-			<key>No</key>
-			<string></string>
-			<key>Yes, but not in the last year</key>
-			<string></string>
-			<key>Yes, during the last year</key>
-			<string></string>
+			<key>answers</key>
+			<array>
+				<string>No</string>
+				<string>Yes, but not in the last year</string>
+				<string>Yes, during the last year</string>
+			</array>
+			<key>question</key>
+			<string>Have you or someone else been injured as a result of your drinking?</string>
 		</dict>
-		<key>question</key>
-		<string>Have you or someone else been injured as a result of your drinking?</string>
-	</dict>
-	<key>9</key>
-	<dict>
-		<key>answers</key>
 		<dict>
-			<key>No</key>
-			<string></string>
-			<key>Yes, but not in the last year</key>
-			<string></string>
-			<key>Yes, during the last year</key>
-			<string></string>
+			<key>answers</key>
+			<array>
+				<string>No</string>
+				<string>Yes, but not in the last year</string>
+				<string>Yes, during the last year</string>
+			</array>
+			<key>question</key>
+			<string>Has a relative or friend or a doctor or another health worker been concerned about your drinking or suggested you cut down?</string>
 		</dict>
-		<key>question</key>
-		<string>Has a relative or friend or a doctor or another health worker been concerned about your drinking or suggested you cut down?</string>
-	</dict>
+	</array>
 </dict>
 </plist>

@@ -13,6 +13,8 @@ import SVProgressHUD
 class HomeScreenViewController: UIViewController{
     
     @IBOutlet weak var welcome_lb: UILabel!
+    @IBOutlet weak var surveyBtn: UIButton!
+    var survey:Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +32,16 @@ class HomeScreenViewController: UIViewController{
         self.navigationController?.navigationBar.isHidden = true
         
         // set welcome message
-        let uname = UserDefaults.standard.string(forKey: "username")
+        let uname = (UserDefaults.standard.string(forKey: "username"))?.capitalized
         welcome_lb.text = "Welcome " + uname!
+        survey = UserDefaults.standard.integer(forKey: "survey")
+        print(survey)
+        if survey == -1{
+            surveyBtn.setTitle("Submit Survey", for: UIControlState.normal)
+            
+        } else {
+            surveyBtn.setTitle("View Survey Report", for: UIControlState.normal)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -45,11 +55,15 @@ class HomeScreenViewController: UIViewController{
         //redirect to profile page
         let newViewController: ViewProfileController = storyboard.instantiateViewController(withIdentifier: "ViewProfileController") as! ViewProfileController
         self.navigationController?.pushViewController(newViewController, animated: true)
+        
     }
     
     @IBAction func logout(_ sender: Any) {
         //clear userdefaults to logout user
-        
+        UserDefaults.standard.removeObject(forKey: "token")
+        UserDefaults.standard.removeObject(forKey: "username")
+        NotificationCenter.default.post(name: Notification.Name("com.mad.showhomescreen"), object: self, userInfo: nil)
+        /*
         SVProgressHUD.show()
         post_logoutrequest(parameters: ["token":UserDefaults.standard.string(forKey: "token")!], handler: {
             data in
@@ -75,7 +89,7 @@ class HomeScreenViewController: UIViewController{
             
            
             
-        })
+        })*/
     }
     
     func showMsg(title: String, subTitle: String) -> Void {
@@ -85,4 +99,25 @@ class HomeScreenViewController: UIViewController{
         
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    @IBAction func submitSurvey(_ sender: Any) {
+       
+        let bundle = Bundle.main
+        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+        print("SURVEY RESP")
+        print(survey)
+        if survey == -1{
+        //redirect to profile page
+        let newViewController: SurveyViewController = storyboard.instantiateViewController(withIdentifier: "SurveyViewController") as! SurveyViewController
+        self.navigationController?.pushViewController(newViewController, animated: true)
+        } else {
+            let newViewController: ShowResultViewController = storyboard.instantiateViewController(withIdentifier: "ShowResultViewController") as! ShowResultViewController
+            newViewController.scores = survey
+            self.navigationController?.pushViewController(newViewController, animated: true)
+            
+        }
+    }
+    
+    
+    
 }

@@ -29,7 +29,7 @@ class ViewProfileController: UIViewController,UITextViewDelegate {
         //change address box text and border color
         address.delegate = self
         address.text = "Enter your address"
-        address.textColor = .lightGray
+        address.textColor = ( address.text=="Enter your address") ? .lightGray : .black
         
         address.layer.borderColor = UIColor.lightGray.cgColor
         address.layer.borderWidth = 1.0
@@ -57,9 +57,12 @@ class ViewProfileController: UIViewController,UITextViewDelegate {
                 }
             } else{
                 self.uname.text = data["name"] as? String
-                self.age.text = data["age"] as? String
+                var str = data["age"] as? Int
+                self.age.text = String(describing:str ?? 0)
                 self.weight.text = data["weight"] as? String
                 self.address.text = data["address"] as? String
+                self.address.textColor = ( self.address.text=="") ? .lightGray : .black
+                
             }
           })
     }
@@ -87,8 +90,8 @@ class ViewProfileController: UIViewController,UITextViewDelegate {
         }
         else{
            //pass parameters to updateprofile api
-            let str:String=uname+"@gmail.com"
-            let params = ["name": uname, "email":str,"age":age,"weight":weight,"address":address,"token":UserDefaults.standard.string(forKey: "token")!]
+            
+            let params = ["username":(UserDefaults.standard.string(forKey: "username")),"name": uname, "age":age,"weight":weight,"address":address]
             
              SVProgressHUD.show()
             post_updateprofilerequest(parameters: params, handler: {(data) in
@@ -136,11 +139,11 @@ class ViewProfileController: UIViewController,UITextViewDelegate {
      /**to perform operations when focus is on and out of textview **/
     func textViewDidBeginEditing(_ textView: UITextView)
     {
-        if (textView.text == "Enter your address")
-        {
+        //if (textView.text == "Enter your address")
+        //{
             textView.text = ""
             textView.textColor = .black
-        }
+       // }
         textView.becomeFirstResponder() //Optional
     }
     
