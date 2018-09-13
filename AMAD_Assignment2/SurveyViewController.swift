@@ -42,6 +42,7 @@ class SurveyViewController: UIViewController{
     var questionList:[Dictionary<String,Any>] = [Dictionary<String,Any>]()
     var selectedTag:Int = -1
     var answers = [Int](repeating: 0, count: 10)
+    var seq:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +78,7 @@ class SurveyViewController: UIViewController{
     
     func setQuestion(){
         //print(qid)
-        question_no.text = String(qid+1)
+        question_no.text = String(seq+1)
         questionLb.text = questionList[qid]["question"] as? String
         var dict = questionList[qid]["answers"] as? [String]
         
@@ -171,12 +172,13 @@ class SurveyViewController: UIViewController{
             
             
         } else {
-        
+        seq = seq + 1
         
             if qid==8{
                 //submitBtn.titleLabel?.text = "Submit"
                 submitBtn .setTitle("Submit", for: UIControlState.normal)
                 qid = qid + 1
+                
             } else {
                 if qid==0{
                     if selectedTag == 1{
@@ -207,12 +209,16 @@ class SurveyViewController: UIViewController{
     }
     
     @IBAction func goBack(_ sender: Any) {
+        seq = seq - 1
         if qid==1 {
             backBtn.isHidden = true
             qid = qid - 1
         } else {
             backBtn.isHidden = false
             backBtn .setTitle("Back", for: UIControlState.normal)
+            if qid == 9 {
+                submitBtn .setTitle("Next", for: UIControlState.normal)
+            }
             if qid==8{
                 if answers[0]==0{
                     qid = 0
