@@ -1,7 +1,6 @@
 # AMAD_Assignment2
 To create a survey tool 
-  
-  
+    
 Below is the description of all the API's with example. 
 
 API DESCRIPTION FOR APP
