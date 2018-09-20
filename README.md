@@ -1,8 +1,8 @@
 # AMAD_Assignment2
 To create a survey tool 
-
-Below is the descripti
-on of all the API's with example. 
+  
+  
+Below is the description of all the API's with example. 
 
 API DESCRIPTION FOR APP
 Description: API logs the admin to the system
