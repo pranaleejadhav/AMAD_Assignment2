@@ -12,7 +12,6 @@ Body:
 {"username":"narahari93"
 "password":"12345"
 }
-
 JWT not needed. 
 
 This API adds the user to the database and is carried out by the admin
