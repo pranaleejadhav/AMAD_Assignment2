@@ -27,7 +27,7 @@
 					"raw": "http://ec2-18-221-45-243.us-east-2.compute.amazonaws.com:7000/adminadd",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"ec2-18-221-45-243.us-east-2.compute.amazonaws.com"
 					],
 					"port": "7000",
 					"path": [
@@ -60,7 +60,7 @@
 					"raw": "http://ec2-18-221-45-243.us-east-2.compute.amazonaws.com:7000/login",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"ec2-18-221-45-243.us-east-2.compute.amazonaws.com"
 					],
 					"port": "7000",
 					"path": [
@@ -92,7 +92,7 @@
 					"raw": "http://ec2-18-221-45-243.us-east-2.compute.amazonaws.com:7000/users",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"ec2-18-221-45-243.us-east-2.compute.amazonaws.com"
 					],
 					"port": "7000",
 					"path": [
@@ -156,7 +156,7 @@
 					"raw": "http://ec2-18-221-45-243.us-east-2.compute.amazonaws.com:7000/userresponse",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"ec2-18-221-45-243.us-east-2.compute.amazonaws.com"
 					],
 					"port": "7000",
 					"path": [
@@ -188,7 +188,7 @@
 					"raw": "http://ec2-18-221-45-243.us-east-2.compute.amazonaws.com:7000/userresponses",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"ec2-18-221-45-243.us-east-2.compute.amazonaws.com"
 					],
 					"port": "7000",
 					"path": [
@@ -220,7 +220,7 @@
 					"raw": "http://ec2-18-221-45-243.us-east-2.compute.amazonaws.com:7000/responses",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"ec2-18-221-45-243.us-east-2.compute.amazonaws.com"
 					],
 					"port": "7000",
 					"path": [
@@ -252,7 +252,7 @@
 					"raw": "http://ec2-18-221-45-243.us-east-2.compute.amazonaws.com:7000/responses",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"ec2-18-221-45-243.us-east-2.compute.amazonaws.com"
 					],
 					"port": "7000",
 					"path": [
@@ -285,7 +285,7 @@
 					"raw": "http://ec2-18-221-45-243.us-east-2.compute.amazonaws.com:7000/admin",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"ec2-18-221-45-243.us-east-2.compute.amazonaws.com"
 					],
 					"port": "7000",
 					"path": [
