@@ -5,6 +5,7 @@ To create a survey tool
 Below is the description of all the API's with example. 
 
 API DESCRIPTION FOR APP
+
 Description: API logs the admin to the system
 Admin Login:
 admin
